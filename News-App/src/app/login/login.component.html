@@ -1,0 +1,20 @@
+<div class="container-lg">
+  <div class="row">
+    <div class="col-md-6 mx-auto my-5">
+      <h1 class="bg-dark text-white rounded text-center p-1">Login</h1>
+      <form class="bg-light  p-4 rounded" [formGroup]="loginForm">
+        <label class="form-label">Email</label>
+        <input formControlName="email" type="email" class="form-control">
+        <h6 class="text-danger" *ngIf="loginForm.controls.email.errors?.['required']">Email is required!</h6>
+        <h6 class="text-danger" *ngIf="loginForm.controls.email.errors?.['email']">Enter a valid Email Address</h6>
+        <br><label class="form-label">Password</label>
+        <input formControlName="password" type="password" class="form-control" >
+        <h6 class="text-danger" *ngIf="loginForm.controls.password.errors?.['required']">Password is required!</h6><br>
+        <a routerLink="/signup" class="text-danger" style="cursor:pointer ;">Dont have an account? Register now!</a><br>
+        <button [disabled]="!loginForm.valid" class="btn btn-danger mx-auto my-2" (click)="login()">Login</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+

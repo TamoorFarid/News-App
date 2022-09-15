@@ -1,0 +1,23 @@
+<div class="container-lg">
+  <div class="row">
+    <div class="col-md-6 mx-auto my-5">
+      <h1 class="bg-dark text-white rounded text-center p-1">Sign Up</h1>
+      <form class="bg-light  p-4 rounded" [formGroup]="signupform">
+        <label class="form-label">Email</label>
+        <input formControlName="email" type="email" class="form-control">
+        <h6 class="text-danger" *ngIf="signupform.controls.email.errors?.['required']">Email is required!</h6>
+        <h6 class="text-danger" *ngIf="signupform.controls.email.errors?.['email']">Enter a valid Email Address</h6>
+        <br><label class="form-label">Password</label>
+        <input formControlName="password" type="password" class="form-control" >
+        <h6 class="text-danger" *ngIf="signupform.controls.password.errors?.['required']">Password is required!</h6><br>
+        <h6 class="text-danger" *ngIf="signupform.controls.password.errors?.['pattern']">Password must be 8 characters long with special cases.</h6><br>
+        <br><label class="form-label">Confirm Password</label>
+        <input formControlName="confirmPassword" type="password" class="form-control" >
+        <h6 class="text-danger" *ngIf="signupform.controls.confirmPassword.errors?.['required']">Password is required!</h6><br>
+        <button [disabled]="!signupform.valid" class="btn btn-danger mx-auto my-2" routerLink="/login">Signup</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+

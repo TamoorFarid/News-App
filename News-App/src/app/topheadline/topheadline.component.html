@@ -1,0 +1,13 @@
+<div class="container mt-3">
+  <h4 class="bg-dark rounded p-1 text-white text-center">Top Headlines <marquee>For more Updates Subscribe us</marquee></h4>
+  <div class="row mt-3">
+    <div class="col-lg-3 my-3 card" *ngFor="let nd of topHeadlinesData">
+        <img src="{{nd.urlToImage}}" alt="" class="img-fluid">
+       <div class="card-header">
+        <h5>{{nd.title}}</h5>
+        <a class="btn btn-dark" target="_blank" href="{{nd.url}}">Read More</a>
+      </div>
+    </div>
+
+  </div>
+</div>
